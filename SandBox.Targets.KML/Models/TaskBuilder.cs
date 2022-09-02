@@ -17,6 +17,7 @@ namespace SandBox.KML.Models
             // add global styles here
             _document.AddStyle(MarkerStyles.ActiveTarget);
             _document.AddStyle(MarkerStyles.PrimaryTarget);
+            _document.AddStyle(MarkerStyles.CompletedTask);
         }
 
         public void AddTask(Tasks.Task task)

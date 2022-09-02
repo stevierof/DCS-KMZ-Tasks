@@ -8,11 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\task-complete.png" />
     <None Remove="Images\task-destroy.png" />
     <None Remove="Images\task-factory.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Images\task-complete.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\task-destroy.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

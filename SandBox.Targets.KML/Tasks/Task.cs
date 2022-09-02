@@ -12,6 +12,11 @@ namespace SandBox.KML.Tasks
         public Task(string name, Coordinates coordinates) : base(name, coordinates)
         {
         }
+
+        public void SetCompleted()
+        {
+            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", MarkerStyles.CompletedTask.Id), UriKind.Relative);
+        }
     }
 
     public class ActiveTarget : Task
