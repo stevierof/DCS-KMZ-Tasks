@@ -14,25 +14,25 @@ namespace SandBox.Tasks.Data.Entities
         public int Id { get; set; }
 
         [Column("mission_id")]
-        public int MissionId { get; set; }
+        public string? MissionId { get; set; }
 
         [Column("unitName")]
-        public int UnitId { get; set; }
+        public string? UnitId { get; set; }
 
         [Column("type")]
-        public int Description { get; set; }
+        public string? Description { get; set; }
 
         [Column("clientName")]
-        public int DiscoveredBy { get; set; }
+        public string? DiscoveredBy { get; set; }
 
         [Column("lat")]
-        public long Latitude { get; set; }
+        public string? Latitude { get; set; }
 
         [Column("lon")]
-        public long Longitude { get; set; }
+        public string? Longitude { get; set; }
 
         [Column("alt")]
-        public long Altitude { get; set; }
+        public string? Altitude { get; set; }
 
     }
 }
