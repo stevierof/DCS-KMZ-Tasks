@@ -22,6 +22,18 @@ namespace SandBox.Tasks
             }
         }
 
+        public string? _missionId;
+        public string MissionId
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_missionId))
+                    _missionId = config.GetSection("MissionId").Value;
+
+                return _missionId;
+            }
+        }
+
         public Config()
         {
             var configuration = new ConfigurationBuilder()
