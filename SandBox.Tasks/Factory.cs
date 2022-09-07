@@ -15,8 +15,6 @@ namespace SandBox.Tasks
         DbContext _context;
 
         private DestroyedUnitService _destroyedUnitService;
-
-
         public DestroyedUnitService? DestroyedUnitService
         {
             get
@@ -24,6 +22,17 @@ namespace SandBox.Tasks
                 if (_destroyedUnitService == null)
                     _destroyedUnitService = new DestroyedUnitService(_context);
                 return _destroyedUnitService;
+            }
+        }
+
+        private ReconnedUnitService _reconnedUnitService;
+        public  ReconnedUnitService? ReconnedUnitService
+        {
+            get
+            {
+                if (_reconnedUnitService == null)
+                    _reconnedUnitService = new ReconnedUnitService(_context);
+                return _reconnedUnitService;
             }
         }
 
