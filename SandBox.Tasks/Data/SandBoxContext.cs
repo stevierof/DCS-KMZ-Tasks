@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,7 +17,15 @@ namespace SandBox.Tasks.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = "server=localhost;port=3306;database=mydb;uid=root;password=6yy@mrCCTpw!4W@0;";
+
+            var configuration = new ConfigurationBuilder()
+                 .SetBasePath(Directory.GetCurrentDirectory())
+                 .AddJsonFile($"appsettings.json");
+
+            var config = configuration.Build();
+            var connectionString = config.GetConnectionString("ArenaMySql");
+
+
             var serverVersion = ServerVersion.AutoDetect(connectionString);
             optionsBuilder.UseMySql(connectionString, serverVersion);
         }
