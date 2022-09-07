@@ -18,12 +18,7 @@ namespace SandBox.Tasks.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            var configuration = new ConfigurationBuilder()
-                 .SetBasePath(Directory.GetCurrentDirectory())
-                 .AddJsonFile($"appsettings.json");
-
-            var config = configuration.Build();
-            var connectionString = config.GetConnectionString("ArenaMySql");
+            string connectionString = new Config().ConnectionString;
 
 
             var serverVersion = ServerVersion.AutoDetect(connectionString);
