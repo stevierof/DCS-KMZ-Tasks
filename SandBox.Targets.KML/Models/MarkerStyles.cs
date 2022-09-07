@@ -1,7 +1,7 @@
 ﻿using SharpKml.Base;
 using SharpKml.Dom;
 
-namespace SandBox.KML.Models
+namespace SandBox.KMZ.Models
 {
     public static class MarkerStyles
     {

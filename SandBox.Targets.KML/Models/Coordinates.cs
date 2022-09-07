@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SandBox.KML.Models
+namespace SandBox.KMZ.Models
 {
     public class Coordinates
     {

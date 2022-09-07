@@ -1,5 +1,5 @@
-﻿using SB = SandBox.KML.Models;
-using Tasks = SandBox.KML.Tasks;
+﻿using SB = SandBox.KMZ.Models;
+using Tasks = SandBox.KMZ.Tasks;
 
 SB.TaskBuilder builder = new SB.TaskBuilder();
 

@@ -2,9 +2,9 @@
 using SharpKml.Dom;
 using SharpKml.Engine;
 using System.Diagnostics;
-using Tasks = SandBox.KML.Tasks;
+using Tasks = SandBox.KMZ.Tasks;
 
-namespace SandBox.KML.Models
+namespace SandBox.KMZ.Models
 {
     public class TaskBuilder
     {

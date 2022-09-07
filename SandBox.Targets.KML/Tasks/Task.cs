@@ -1,11 +1,11 @@
-﻿using SandBox.KML.Models;
+﻿using SandBox.KMZ.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SandBox.KML.Tasks
+namespace SandBox.KMZ.Tasks
 {
     public class Task : Marker
     {
