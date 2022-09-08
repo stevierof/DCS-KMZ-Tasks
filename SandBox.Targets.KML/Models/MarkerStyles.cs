@@ -3,10 +3,10 @@ using SharpKml.Dom;
 
 namespace SandBox.KMZ.Models
 {
-    public static class MarkerStyles
+    public class MarkerStyles
     {
-        private static Style? _targetStyle;
-        public static Style ActiveTarget
+        private Style? _targetStyle;
+        public Style ActiveTarget
         {
             get
             {
@@ -24,8 +24,8 @@ namespace SandBox.KMZ.Models
             }
         }
 
-        private static Style? _primaryTargetStyle;
-        public static Style PrimaryTarget
+        private Style? _primaryTargetStyle;
+        public Style PrimaryTarget
         {
             get
             {
@@ -43,8 +43,8 @@ namespace SandBox.KMZ.Models
             }
         }
 
-        private static Style? _completedTask;
-        public static Style CompletedTask
+        private Style? _completedTask;
+        public Style CompletedTask
         {
             get
             {

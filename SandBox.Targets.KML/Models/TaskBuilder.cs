@@ -10,14 +10,17 @@ namespace SandBox.KMZ.Models
     {
         private Document _document;
         
-        public TaskBuilder()
+        public TaskBuilder(string name, string description)
         {
             _document = new Document();
+            _document.Name = name;
+            _document.Description = new Description { Text = description };
 
+            var markerStyles = new MarkerStyles();
             // add global styles here
-            _document.AddStyle(MarkerStyles.ActiveTarget);
-            _document.AddStyle(MarkerStyles.PrimaryTarget);
-            _document.AddStyle(MarkerStyles.CompletedTask);
+            _document.AddStyle(markerStyles.ActiveTarget);
+            _document.AddStyle(markerStyles.PrimaryTarget);
+            _document.AddStyle(markerStyles.CompletedTask);
         }
 
         public void AddTask(Tasks.Task task)

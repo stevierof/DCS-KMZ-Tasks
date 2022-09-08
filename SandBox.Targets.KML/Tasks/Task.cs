@@ -15,7 +15,7 @@ namespace SandBox.KMZ.Tasks
 
         public void SetCompleted()
         {
-            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", MarkerStyles.CompletedTask.Id), UriKind.Relative);
+            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().CompletedTask.Id), UriKind.Relative);
         }
     }
 
@@ -23,7 +23,7 @@ namespace SandBox.KMZ.Tasks
     {
         public ActiveTarget(string name, Coordinates coordinates) : base(name, coordinates)
         {
-            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", MarkerStyles.ActiveTarget.Id), UriKind.Relative);
+            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().ActiveTarget.Id), UriKind.Relative);
         }
     }
 
@@ -31,7 +31,7 @@ namespace SandBox.KMZ.Tasks
     {
         public PrimaryTarget(string name, Coordinates coordinates) : base(name, coordinates)
         {
-            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", MarkerStyles.PrimaryTarget.Id), UriKind.Relative);
+            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().PrimaryTarget.Id), UriKind.Relative);
         }
     }
 

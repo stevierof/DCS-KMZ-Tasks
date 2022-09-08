@@ -22,9 +22,9 @@ namespace SandBox.Tasks.Services
 
         }
 
-        public IEnumerable<DestroyedUnit>? Fetch(string missionId)
+        public List<DestroyedUnit>? Fetch(string missionId)
         {
-            return _repository?.FindAllBy(x => x.MissionId == missionId);
+            return _repository?.FindAllBy(x => x.MissionId == missionId).ToList();
         }
     }
 }
