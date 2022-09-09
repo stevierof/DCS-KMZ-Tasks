@@ -65,10 +65,11 @@ namespace SandBox.KMZ.Models
                 }
             }
 
-            using (Stream output = File.Create(string.Format("{0}.kmz", @filename)))
+            string filePath = string.Format("{0}-{1}.{2}.kmz", filename, DateTime.Now.ToString("yyyy-MM-dd"), DateTime.Now.ToString("HH-mm"));
+            using (Stream output = File.Create(filePath))
             {
                 kmz.Save(output);
-                Console.WriteLine("Saved to '{0}'.", filename);
+                Console.WriteLine("Saved to '{0}'.", filePath);
             }
 
         }

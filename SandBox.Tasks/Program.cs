@@ -7,20 +7,6 @@ using SB = SandBox.KMZ.Models;
 using Tasks = SandBox.KMZ.Tasks;
 
 
-//var exampleFactoryTask = new Tasks.PrimaryTarget("Factory", new SB.Coordinates
-//{
-//    Latitude = 33.4918046,
-//    Longitude = 35.9115455
-//});
-
-
-//builder.AddTask(exampleTask);
-//builder.AddTask(exampleTaskCompleted);
-//builder.AddTask(exampleFactoryTask);
-
-
-//builder.SaveKMZ("test");
-
 Factory factory = new Factory(new SandBoxContext());
 SB.TaskBuilder activeTaskBuilder = new SB.TaskBuilder("Tasks", "The following units have been detected by friendly flights and are now valid targets to attack.");
 SB.TaskBuilder completedTaskBuilder = new SB.TaskBuilder("Completed Tasks", "These units have been destroyed succesfully after detection by allied recon.");
@@ -55,7 +41,7 @@ foreach (var unit in reconnedUnits)
     
 }
 
-activeTaskBuilder.SaveKMZ(Path.Combine(config.SavePath, "DetectedUnits"));
-completedTaskBuilder.SaveKMZ(Path.Combine(config.SavePath, "CompletedTasks"));
+activeTaskBuilder.SaveKMZ(Path.Combine(config.SavePath, "ReconLayer"));
+completedTaskBuilder.SaveKMZ(Path.Combine(config.SavePath, "CompletedTaskLayer"));
 
 Console.WriteLine("Done");
