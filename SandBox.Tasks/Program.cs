@@ -55,7 +55,7 @@ foreach (var unit in reconnedUnits)
     
 }
 
-activeTaskBuilder.SaveKMZ("ReconResults");
-completedTaskBuilder.SaveKMZ("DestroyedTargets");
+activeTaskBuilder.SaveKMZ(Path.Combine(config.SavePath, "DetectedUnits"));
+completedTaskBuilder.SaveKMZ(Path.Combine(config.SavePath, "CompletedTasks"));
 
 Console.WriteLine("Done");

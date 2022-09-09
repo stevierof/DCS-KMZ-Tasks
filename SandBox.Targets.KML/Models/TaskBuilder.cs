@@ -9,6 +9,7 @@ namespace SandBox.KMZ.Models
     public class TaskBuilder
     {
         private Document _document;
+
         
         public TaskBuilder(string name, string description)
         {
@@ -21,6 +22,7 @@ namespace SandBox.KMZ.Models
             _document.AddStyle(markerStyles.ActiveTarget);
             _document.AddStyle(markerStyles.PrimaryTarget);
             _document.AddStyle(markerStyles.CompletedTask);
+            _document.AddStyle(markerStyles.StrategicTarget);
         }
 
         public void AddTask(Tasks.Task task)
@@ -50,6 +52,7 @@ namespace SandBox.KMZ.Models
 
             var links = new LinkResolver(kml);
 
+
             foreach (string relativePath in links.Links.Where(x => !x.OriginalString.StartsWith("#")).Select(x => x.OriginalString))
             {
                 
@@ -62,7 +65,7 @@ namespace SandBox.KMZ.Models
                 }
             }
 
-            using (Stream output = File.Create(string.Format("{0}.kmz", filename)))
+            using (Stream output = File.Create(string.Format("{0}.kmz", @filename)))
             {
                 kmz.Save(output);
                 Console.WriteLine("Saved to '{0}'.", filename);

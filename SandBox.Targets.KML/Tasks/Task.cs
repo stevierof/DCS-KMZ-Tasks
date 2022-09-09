@@ -23,7 +23,25 @@ namespace SandBox.KMZ.Tasks
     {
         public ActiveTarget(string name, Coordinates coordinates) : base(name, coordinates)
         {
-            this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().ActiveTarget.Id), UriKind.Relative);
+
+            switch(name.ToLower())
+            {
+                case "workshop a":
+                    this.Placemark.Name = "Primary target: Factory";
+                    this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().PrimaryTarget.Id), UriKind.Relative);
+                    break;
+
+                case "shelter b":
+                    this.Placemark.Name = "Shelter / Bunker";
+                    this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().StrategicTarget.Id), UriKind.Relative);
+                    break;
+
+                default:
+                    this.Placemark.StyleUrl = new Uri(string.Format("#{0}", new MarkerStyles().ActiveTarget.Id), UriKind.Relative);
+                    break;
+
+            }
+            
         }
     }
 

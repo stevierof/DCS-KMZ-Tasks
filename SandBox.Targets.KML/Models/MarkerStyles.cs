@@ -43,6 +43,25 @@ namespace SandBox.KMZ.Models
             }
         }
 
+        private Style? _strategicTargetStyle;
+        public Style StrategicTarget
+        {
+            get
+            {
+                if (_strategicTargetStyle == null)
+                {
+                    _strategicTargetStyle = new Style();
+                    _strategicTargetStyle.Id = "strategicTargetIcon";
+                    _strategicTargetStyle.Icon = new IconStyle
+                    {
+                        Icon = new IconStyle.IconLink(new Uri("images/task-strategic.png", UriKind.Relative)),
+                        Scale = 1
+                    };
+                }
+                return _strategicTargetStyle;
+            }
+        }
+
         private Style? _completedTask;
         public Style CompletedTask
         {

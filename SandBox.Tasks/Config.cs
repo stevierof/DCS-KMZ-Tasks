@@ -33,6 +33,18 @@ namespace SandBox.Tasks
                 return _missionId;
             }
         }
+        public string? _savePath;
+        public string SavePath
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(_savePath))
+                    _savePath = config.GetSection("SavePath").Value;
+
+                return _savePath;
+            }
+        }
+
 
         public Config()
         {
@@ -43,5 +55,7 @@ namespace SandBox.Tasks
             this.config = configuration.Build();
 
         }
+
+
     }
 }

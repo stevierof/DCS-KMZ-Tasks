@@ -11,6 +11,7 @@
     <None Remove="Images\task-complete.png" />
     <None Remove="Images\task-destroy.png" />
     <None Remove="Images\task-factory.png" />
+    <None Remove="Images\task-strategic.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +22,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\task-factory.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\task-strategic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
