@@ -2,7 +2,7 @@
 
 using SandBox.Tasks;
 using SandBox.Tasks.Data;
-
+using System.Globalization;
 using SB = SandBox.KMZ.Models;
 using Tasks = SandBox.KMZ.Tasks;
 
@@ -21,9 +21,9 @@ foreach (var unit in reconnedUnits)
 {
     var target = new Tasks.ActiveTarget(unit.Description ?? "Unknown unit", new SB.Coordinates
     {
-        Latitude = double.Parse(unit.Latitude ?? "0"),
-        Longitude = double.Parse(unit.Longitude ?? "0"),
-        Altitude = double.Parse(unit.Altitude ?? "0")
+        Latitude = double.Parse(unit.Latitude ?? "0", CultureInfo.InvariantCulture),
+        Longitude = double.Parse(unit.Longitude ?? "0", CultureInfo.InvariantCulture),
+        Altitude = double.Parse(unit.Altitude ?? "0", CultureInfo.InvariantCulture)
     });
 
     // check if the target has been destroyed
