@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SandBox.Tasks.Data.Entities
 {
-    [Table("ddcs_units_dead")]
+    [Table("DDCS_units_dead")]
     public class DestroyedUnit
     {
         [Column("idDDCS_units_dead")]
